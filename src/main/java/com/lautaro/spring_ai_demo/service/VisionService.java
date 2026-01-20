@@ -37,7 +37,6 @@ public class VisionService {
             return MimeTypeUtils.IMAGE_JPEG;
         if (f.endsWith(".gif"))
             return MimeTypeUtils.IMAGE_GIF;
-        // si tenés webp:
         if (f.endsWith(".webp"))
             return new MimeType("image", "webp");
         throw new IllegalArgumentException("Formato de imagen no soportado: " + fileName);

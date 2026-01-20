@@ -39,7 +39,7 @@ public class BikeSearchService {
                 String id = slug(b.name());
                 bikesById.put(id, b);
 
-                String textToEmbed = buildText(b); // IMPORTANTE: lo que embebés
+                String textToEmbed = buildText(b);
                 Map<String, Object> metadata = Map.of(
                         "name", b.name(),
                         "price", b.price() != null ? b.price().toString() : null,
@@ -70,7 +70,7 @@ public class BikeSearchService {
     }
 
     private String buildText(BikeDTO b) {
-        // TIP: no metas TODO el megatexto si es enorme; con name + shortDescription +
+        // TIP: no meter TODO el megatexto si es enorme; con name + shortDescription +
         // tags suele alcanzar.
         String desc = b.description() == null ? "" : b.description();
         desc = desc.length() > 800 ? desc.substring(0, 800) : desc;
