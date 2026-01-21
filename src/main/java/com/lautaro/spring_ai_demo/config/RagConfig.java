@@ -22,6 +22,13 @@ public class RagConfig {
 
     // Ingesta: lee todos los .md de classpath:/rag, los parte en chunks y los
     // guarda
+    // No interfiere con el vectorStore de los demas archivos, esto solo sirve como
+    // base de las consultas RAG.
+    // aunque si tenemos varias consultas RAG entonces lo recomendado para que no se
+    // pisen es primero poner metaadata en los archivos a leer.
+    // con esa metadata depsues puedo hacer
+    // reader.getCustomMetadata().put("collection", "heladeras"); y filtras de
+    // entrada
     @Bean
     public org.springframework.boot.CommandLineRunner ingestRagDocs(VectorStore vectorStore) {
         return args -> {
@@ -61,7 +68,8 @@ public class RagConfig {
                 .chatClientBuilder(chatClientBuilder.build().mutate())
                 .build();
 
-        // 2) Retriever (topK + threshold + filtros si querés)
+        // 2) Retriever (topK + threshold + filtros si quisiera)
+        // resumen: obtiene “los pedazos correctos” de los docs.
         var retriever = VectorStoreDocumentRetriever.builder()
                 .vectorStore(vectorStore)
                 .topK(6)

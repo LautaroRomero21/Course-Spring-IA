@@ -77,6 +77,12 @@
       <optional>true</optional>
     </dependency>
 
+    <!-- Lector de Markdown (para ingestar docs fácil) -->
+    <dependency>
+      <groupId>org.springframework.ai</groupId>
+      <artifactId>spring-ai-markdown-document-reader</artifactId>
+    </dependency>
+    
     <!-- Tests -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
