@@ -1,0 +1,14 @@
+[
+    {
+        "id": "T001",
+        "nombre": "Sofia Perez",
+        "telefono": "+54 11 5555-1111",
+        "zona": "Palermo"
+    },
+    {
+        "id": "T002",
+        "nombre": "Juan Gomez",
+        "telefono": "+54 11 5555-2222",
+        "zona": "Caballito"
+    }
+]

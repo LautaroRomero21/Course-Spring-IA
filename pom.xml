@@ -2,7 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -15,12 +14,10 @@
   <groupId>com.lautaro</groupId>
   <artifactId>spring-ai-demo</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>spring-ai-demo</name>
-  <description>Demo de Spring Boot + Spring AI (Ollama)</description>
 
   <properties>
     <java.version>21</java.version>
-    <spring-ai.version>1.1.0</spring-ai.version>
+    <spring-ai.version>1.1.2</spring-ai.version>
   </properties>
 
   <dependencyManagement>
@@ -36,54 +33,35 @@
   </dependencyManagement>
 
   <dependencies>
-    <!-- Web / REST -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
 
-    <!-- Spring AI + Ollama (Chat + Embeddings) -->
+    <!-- Spring AI Ollama -->
     <dependency>
       <groupId>org.springframework.ai</groupId>
       <artifactId>spring-ai-starter-model-ollama</artifactId>
     </dependency>
 
-    <!-- (Opcional) si vas a usar vector stores / RAG más adelante -->
+    <!-- VectorStore (RAG) -->
     <dependency>
       <groupId>org.springframework.ai</groupId>
       <artifactId>spring-ai-vector-store</artifactId>
     </dependency>
 
-    <dependency>
-      <groupId>org.springframework.ai</groupId>
-      <artifactId>spring-ai-vector-store</artifactId>
-    </dependency>
-
+    <!-- Advisors para RAG (QuestionAnswerAdvisor) -->
     <dependency>
       <groupId>org.springframework.ai</groupId>
       <artifactId>spring-ai-advisors-vector-store</artifactId>
     </dependency>
 
+    <!-- Jackson ya viene por web, pero lo dejo explicito por claridad -->
     <dependency>
-      <groupId>org.springframework.ai</groupId>
-      <artifactId>spring-ai-rag</artifactId>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
     </dependency>
 
-
-    <!-- Para autocompletar application.properties en el IDE (opcional pero útil) -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-configuration-processor</artifactId>
-      <optional>true</optional>
-    </dependency>
-
-    <!-- Lector de Markdown (para ingestar docs fácil) -->
-    <dependency>
-      <groupId>org.springframework.ai</groupId>
-      <artifactId>spring-ai-markdown-document-reader</artifactId>
-    </dependency>
-    
-    <!-- Tests -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
@@ -99,5 +77,4 @@
       </plugin>
     </plugins>
   </build>
-
 </project>

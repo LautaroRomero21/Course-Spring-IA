@@ -1,0 +1,51 @@
+[ {
+  "lautaro" : [ {
+    "role" : "user",
+    "content" : "Reportá un incidente VACIA para H002, no hay comida disponible",
+    "at" : "2026-01-21T23:55:48.631229Z"
+  }, {
+    "role" : "assistant",
+    "content" : "Se ha reportado el incidente VACIA para la heladera H002 debido a que no hay comida disponible. Se asignará un técnico por zona y se registrarán los seguimientos correspondientes. El estado del incidente es ABIERTO.",
+    "at" : "2026-01-21T23:55:48.639729900Z"
+  }, {
+    "role" : "user",
+    "content" : "Asigná un técnico al incidente d6d32365-c044-4088-8a8b-a5bd905c4f06",
+    "at" : "2026-01-21T23:56:00.469582Z"
+  }, {
+    "role" : "assistant",
+    "content" : "El técnico asignado al incidente d6d32365-c044-4088-8a8b-a5bd905c4f06 es T002.",
+    "at" : "2026-01-21T23:56:00.478582100Z"
+  }, {
+    "role" : "user",
+    "content" : "Estoy en Palermo. ¿Qué heladeras hay?",
+    "at" : "2026-01-21T23:56:05.452525300Z"
+  }, {
+    "role" : "assistant",
+    "content" : "Tienes una heladera en Palermo ubicada en Av. Santa Fe 1234, que está activa y reportó temperatura hace 15 minutos. La capacidad es de 50 litros y el stock actual es de 12 litros.",
+    "at" : "2026-01-21T23:56:05.461023800Z"
+  }, {
+    "role" : "user",
+    "content" : "Reportá un incidente VACIA en la primera heladera",
+    "at" : "2026-01-21T23:56:12.859927600Z"
+  }, {
+    "role" : "assistant",
+    "content" : "Se ha reportado el incidente VACIA para la heladera H001 debido a que no hay comida disponible. Se asignará un técnico por zona y se registrarán los seguimientos correspondientes. El estado del incidente es ABIERTO.",
+    "at" : "2026-01-21T23:56:12.868929200Z"
+  }, {
+    "role" : "user",
+    "content" : "Asignale un técnico",
+    "at" : "2026-01-21T23:56:21.358920800Z"
+  }, {
+    "role" : "assistant",
+    "content" : "No puedo asignar un técnico porque no tengo suficiente información sobre el incidente. ¿Podrías proporcionarme el ID del incidente para poder ayudarte?",
+    "at" : "2026-01-21T23:56:21.367421500Z"
+  }, {
+    "role" : "user",
+    "content" : "Estoy en Palermo. ¿Qué heladeras hay?",
+    "at" : "2026-01-21T23:56:28.250717900Z"
+  }, {
+    "role" : "assistant",
+    "content" : "Tienes una heladera en Palermo ubicada en Av. Santa Fe 1234 que está activa y reportó temperatura hace 15 minutos. La capacidad es de 50 litros y el stock actual es de 12 litros.",
+    "at" : "2026-01-21T23:56:28.259219400Z"
+  } ]
+} ]

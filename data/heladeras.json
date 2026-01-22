@@ -1,0 +1,22 @@
+[
+    {
+        "id": "H001",
+        "zona": "Palermo",
+        "direccion": "Av. Santa Fe 1234",
+        "activa": true,
+        "tempC": 4.5,
+        "lastTempAt": "2026-01-20T23:00:00Z",
+        "capacidad": 50,
+        "stockActual": 12
+    },
+    {
+        "id": "H002",
+        "zona": "Caballito",
+        "direccion": "Rivadavia 5555",
+        "activa": false,
+        "tempC": null,
+        "lastTempAt": null,
+        "capacidad": 60,
+        "stockActual": 0
+    }
+]

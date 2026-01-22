@@ -1,0 +1,28 @@
+[ {
+  "id" : "4717cd25-810d-4000-9ac3-62de9f452c6e",
+  "heladeraId" : "H001",
+  "tipo" : "TEMPERATURA_ALTA",
+  "descripcion" : "marca 12°C hace 10 minutos",
+  "estado" : "ABIERTO",
+  "tecnicoId" : null,
+  "creadoEn" : "2026-01-21T23:55:40.400479Z",
+  "actualizadoEn" : "2026-01-21T23:55:40.400479Z"
+}, {
+  "id" : "d6d32365-c044-4088-8a8b-a5bd905c4f06",
+  "heladeraId" : "H002",
+  "tipo" : "VACIA",
+  "descripcion" : "no hay comida disponible",
+  "estado" : "EN_PROCESO",
+  "tecnicoId" : "T002",
+  "creadoEn" : "2026-01-21T23:55:47.921231400Z",
+  "actualizadoEn" : "2026-01-21T23:55:59.947582300Z"
+}, {
+  "id" : "b7459706-3adf-449f-82d0-d6b5d9842edc",
+  "heladeraId" : "H001",
+  "tipo" : "VACIA",
+  "descripcion" : "",
+  "estado" : "EN_PROCESO",
+  "tecnicoId" : "T001",
+  "creadoEn" : "2026-01-21T23:56:12.132428700Z",
+  "actualizadoEn" : "2026-01-21T23:56:20.864826100Z"
+} ]

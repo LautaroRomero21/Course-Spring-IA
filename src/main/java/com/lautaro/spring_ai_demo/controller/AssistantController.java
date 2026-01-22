@@ -1,35 +1,24 @@
 package com.lautaro.spring_ai_demo.controller;
 
-import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.client.advisor.vectorstore.QuestionAnswerAdvisor;
-import org.springframework.ai.chat.memory.ChatMemory;
+import com.lautaro.spring_ai_demo.service.AssistantService;
 import org.springframework.web.bind.annotation.*;
+import com.lautaro.spring_ai_demo.dto.ChatRequest;
+import com.lautaro.spring_ai_demo.dto.ChatResponse;
 
 @RestController
 @RequestMapping("/api/v1")
 public class AssistantController {
 
-    private final ChatClient ragChatClient;
+    private final AssistantService assistant;
 
-    public AssistantController(ChatClient ragChatClient) {
-        this.ragChatClient = ragChatClient;
+    public AssistantController(AssistantService assistant) {
+        this.assistant = assistant;
     }
 
-    @GetMapping("/chat")
-    public String chat(
-            @RequestParam String q,
-            @RequestParam(defaultValue = "default") String cid) {
-        return ragChatClient.prompt()
-                .system("""
-                        Sos un asistente útil.
-                        Si te falta contexto, decilo.
-                        Cuando uses contexto recuperado, integralo naturalmente en la respuesta.
-                        """)
-                .advisors(a -> a
-                        .param(ChatMemory.CONVERSATION_ID, cid)
-                        .param(QuestionAnswerAdvisor.FILTER_EXPRESSION, "type == 'kb'"))
-                .user(q)
-                .call()
-                .content();
+    @PostMapping("/chat")
+    public ChatResponse chat(@RequestBody ChatRequest req) {
+        String cid = (req.cid() == null || req.cid().isBlank()) ? "default" : req.cid();
+        return new ChatResponse(cid, assistant.chat(cid, req.q()));
     }
+
 }
