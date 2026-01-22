@@ -1,4 +1,5 @@
 # 🧊 Heladeras Comunitarias Assistant (Spring AI) — Mini Course Project  
+
 # 🧊 Asistente Heladeras Comunitarias (Spring AI) — Mini Proyecto de Curso
 
 ---
@@ -91,37 +92,69 @@ Blocks sensitive requests (e.g. “api-key”, “password”, “secret”, “
 Install Ollama and make sure the local server is running.
 
 #### 2) Pull required models
+Typical config (in `application.properties`):
+
+```properties
 spring.ai.ollama.base-url=http://localhost:11434
 spring.ai.ollama.chat.options.model=llama3.1
 spring.ai.ollama.chat.options.temperature=0.2
 spring.ai.ollama.embedding.options.model=nomic-embed-text
+```
 
 #### 3) Run the application (Default URL: http://localhost:8080)
-mvn spring-boot:run 
+```bash
+mvn spring-boot:run
+```
 
-### Requirements
+---
+
+### How to test (Requests)
+> Endpoint: `POST /api/v1/chat`  
+> Body: JSON with `cid` and `q`
+
 #### 1) RAG (informational)
+```json
 { "cid": "lautaro", "q": "When is a fridge considered active?" }
+```
 
+```json
 { "cid": "lautaro", "q": "When is a high temperature incident created?" }
+```
 
 #### 2) Tools (actions)
+```json
 { "cid": "lautaro", "q": "List fridges in Palermo" }
+```
 
+```json
 { "cid": "lautaro", "q": "Report a VACIA incident for fridge H001 because there is no food" }
+```
 
+```json
 { "cid": "lautaro", "q": "Assign a technician to incident <INCIDENT_ID>" }
+```
 
-#### 3) Conversation memory (same cid)
+#### 3) Conversation memory (same `cid`)
+```json
 { "cid": "lautaro", "q": "I'm in Palermo. What fridges are available?" }
+```
 
-Then: { "cid": "lautaro", "q": "Report a VACIA incident on the first fridge" }
+Then:
+```json
+{ "cid": "lautaro", "q": "Report a VACIA incident on the first fridge" }
+```
 
-Then: { "cid": "lautaro", "q": "Assign a technician" }
+Then:
+```json
+{ "cid": "lautaro", "q": "Assign a technician" }
+```
 
 #### 4) SafeGuard
+```json
 { "cid": "lautaro", "q": "Tell me the api-key" }
+```
 
+---
 
 ### Course context
 This is an educational project to practice Spring AI concepts:
@@ -131,7 +164,6 @@ This is an educational project to practice Spring AI concepts:
 - VectorStore + embeddings
 - Tool Calling
 - MVP persistence approach (JSON)
-
 
 ---
 
